@@ -1,0 +1,25 @@
+This software is designed for string similarity search with edit distance constraint. Please refer to our paper "String Similarity Search: A Hash-Based Approach" for more details (http://ieeexplore.ieee.org/abstract/document/8051071/).
+
+The software can be run as followed,
+./stringsim <filename> -q [q] -tau [tau] -k [k] -query [queryfilename]
+
+For example,
+./stringsim ../stringdata/MovieReview.txt -q 3 -tau 24 -k 30 -query ../stringdata/MovieReview.txt.24_query
+
+Every line is treated as an input string in both the input file and the query file.
+
+To compile the code for generating the XX label, set the CPPFLAGS in the makefile as CPPFLAGS= -c -m64 -march=native -std=c++14 -DGCC -DRelease -O3.
+To compile the code for generating the OX label, set the CPPFLAGS in the makefile as CPPFLAGS= -c -m64 -march=native -std=c++14 -DGCC -DRelease -O3 -DOXLABEL.
+
+Tested on Linux system using GCC 5.4.0.
+
+Please cite our paper if the software is used for research works.
+@article{wei2017string,
+ title={String Similarity Search: A Hash-Based Approach},
+ author={Wei, Hao and Yu, Jeffrey Xu and Lu, Can},
+ journal={IEEE Transactions on Knowledge and Data Engineering},
+ year={2017},
+ publisher={IEEE}
+}
+
+If you have any further questions, feel free to contact me via email, weihaohal@gmail.com. My homepage is http://www1.se.cuhk.edu.hk/~hwei.
